@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../assets/global.css" />
+		<title>Dropdown-Menüs mit Transitions</title>
+		<style>
+			nav ul {
+				list-style: none;
+				padding: 0;
+			}
+
+			nav a {
+				display: block;
+				padding: 0.125rem;
+				text-decoration: none;
+			}
+
+			nav > ul {
+				display: flex;
+				padding: 0.5rem;
+				gap: 0.5rem;
+				border: 1px solid currentColor;
+			}
+
+			.menu ul {
+				transition: opacity 500ms, transform 750ms;
+				opacity: 0;
+				transform: scaleY(0);
+
+				transform-origin: left top;
+				display: flex;
+				flex-direction: column;
+				gap: 0.25rem;
+				border: 1px solid grey;
+			}
+
+			.menu ul > li:not(:last-child) {
+				border-bottom: 1px solid grey;
+			}
+
+			.menu:hover ul,
+			.menu:focus-within ul {
+				opacity: 1;
+
+				transform: scaleY(1);
+			}
+
+			.menu {
+				position: relative;
+			}
+
+			.menu ul {
+				position: absolute;
+        z-index: 100;
+				width: max-content;
+				background: lightgrey;
+				padding: 0.5rem;
+				border-radius: 0.25rem;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Dropdown-Menüs mit Transitions</h1>
+    <section class="beispiel">
+			<nav>
+				<ul>
+					<li><a href="">Home</a></li>
+					<li class="menu">
+						<a href="">Preise</a>
+						<ul>
+							<li><a href="">Damen</a></li>
+							<li><a href="">Herren</a></li>
+							<li><a href="">Farbe</a></li>
+						</ul>
+					</li>
+					<li class="menu">
+						<a href="">Termine</a>
+						<ul>
+							<li><a href="">Termin mit Ute</a></li>
+							<li><a href="">Termin mit Fernando</a></li>
+							<li><a href="">Termin mit Ahmed</a></li>
+							<li><a href="">Termin mit Christin</a></li>
+							<li><a href="">Termin mit Linda</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<pre lang="html">
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;menu&quot;&gt;&lt;a href=&quot;&quot;&gt;Preise&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;Damen&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;Herren&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;Farbe&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      
+    &lt;/li&gt;
+    &lt;li class=&quot;menu&quot;&gt;&lt;a href=&quot;&quot;&gt;Termine&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;Termin mit Ute&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;Termin mit Fernando&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;Termin mit Ahmed&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;Termin mit Christin&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;Termin mit Linda&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre
+		>
+		<pre lang="css">
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.125rem;
+  text-decoration: none;
+}
+
+nav>ul {
+  display: flex;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border: 1px solid currentColor;
+}
+
+.menu ul {
+  transition: opacity 500ms, transform 750ms;
+  opacity: 0;
+  transform: scaleY(0);
+  
+  transform-origin: left top;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border: 1px solid grey;
+}
+
+.menu ul>li:not(:last-child) {
+  border-bottom: 1px solid grey;
+}
+
+.menu:hover ul, .menu:focus-within ul {
+  opacity: 1;
+  
+  transform: scaleY(1);
+}
+
+.menu {
+  position: relative;
+}
+
+.menu ul {
+  position: absolute;
+  z-index: 100;
+  width: max-content;
+  background: lightgrey;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}</pre
+		>
+		
+	</body>
+</html>
